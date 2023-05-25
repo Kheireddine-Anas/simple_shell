@@ -32,7 +32,7 @@ char **tokenizeDyl(char *buffer)
 * _splitPATHdYl - int func l3adab ahamadi
 * @Dylnstr: param waw parametre dyalhom
 *
-* Return: ra9m of PATH 3odw 
+* Return: ra9m of PATH 3odw
 */
 int _splitPATHdYl(char *Dylnstr)
 {
