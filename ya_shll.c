@@ -1,8 +1,8 @@
 #include "main.h"
 /**
-* main - int func
+* main - int func kamlin hado waqila
 *
-* Return: 0 on success
+* Return: 0 on fi najah
 */
 int main(void)
 {
