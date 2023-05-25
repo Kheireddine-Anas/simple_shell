@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-* _strdupDyl - char func
-* @Dylnstr: param
+* _strdupDyl - char func deyalha hadi
+* @Dylnstr: param parametre dyalhom
 *
-* Return: pointer
+* Return: pointer mart lihom
 */
 char *_strdupDyl(char *Dylnstr)
 {
@@ -25,10 +25,10 @@ char *_strdupDyl(char *Dylnstr)
 	return (dest_str);
 }
 /**
-* _splitstringDyl - int func
-* @Dylnstr: param
+* _splitstringDyl - int func fihom kamlin
+* @Dylnstr: param may mkanch
 *
-* Return: param
+* Return: param parametre dyalhom
 */
 int _splitstringDyl(char *Dylnstr)
 {
@@ -49,10 +49,10 @@ int _splitstringDyl(char *Dylnstr)
 	return (wordcount);
 }
 /**
-* _strcmpDyl - int func
-* @strD1: param
-* @strD2: param
-* Return: int
+* _strcmpDyl - int func to long 3lina
+* @strD1: param parametre dyalhom
+* @strD2: param parametre dyalhom
+* Return: int chi ra9am
 */
 int _strcmpDyl(const char *strD1, const char *strD2)
 {
@@ -67,12 +67,12 @@ int _strcmpDyl(const char *strD1, const char *strD2)
 		return (*strD1 - *strD2);
 }
 /**
-* _strcatDyl - char func
-* @dest: param
-* @src: param
-* i - param
-* j - param
-* Return: char
+* _strcatDyl - char func awdi ach ghadi
+* @dest: param parametre dyalhom
+* @src: param parametre dyalhom
+* i - param parametre dyalhom jdid
+* j - param jdid hadchi
+* Return: char chi harf hada
 */
 char *_strcatDyl(char *dest, char *src)
 {
@@ -87,10 +87,10 @@ char *_strcatDyl(char *dest, char *src)
 	return (dest);
 }
 /**
-* _strlenDyl - int func
-* @s: param
-* i - param
-* Return: int
+* _strlenDyl - int func bazaf deyl
+* @s: param khadma
+* i - param parametre dyalhom
+* Return: int waqila
 */
 int _strlenDyl(char *s)
 {
