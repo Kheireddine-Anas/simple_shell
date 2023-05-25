@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-* tokenizeDyl - char func
-* @buffer: param
+* tokenizeDyl - char func khadamin
+* @buffer: param parametre dyalhom
 *
-* Return: param
+* Return: param parametre dyalhom
 */
 char **tokenizeDyl(char *buffer)
 {
@@ -29,10 +29,10 @@ char **tokenizeDyl(char *buffer)
 	return (av);
 }
 /**
-* _splitPATHdYl - int func
-* @Dylnstr: param
+* _splitPATHdYl - int func l3adab ahamadi
+* @Dylnstr: param waw parametre dyalhom
 *
-* Return: number of PATH members
+* Return: ra9m of PATH 3odw 
 */
 int _splitPATHdYl(char *Dylnstr)
 {
@@ -55,11 +55,11 @@ int _splitPATHdYl(char *Dylnstr)
 	return (wordcount);
 }
 /**
-* _PATHstrcmpDyl - int func
-* @strD1: param
-* @strD2: param
+* _PATHstrcmpDyl - int func dakchi zaz loz
+* @strD1: param parametre dyalhom
+* @strD2: param parametre dyalhom
 *
-* Return: 0 on success
+* Return: 0 on success waqila
 */
 int _PATHstrcmpDyl(const char *strD1, const char *strD2)
 {
@@ -73,12 +73,12 @@ int _PATHstrcmpDyl(const char *strD1, const char *strD2)
 	return (0);
 }
 /**
-* _concatDyl - char func
-* @tmp: param
-* @av: param
-* @tok: param
+* _concatDyl - char func kamlin
+* @tmp: param parametre dyalhom
+* @av: param parametre dokil
+* @tok: param parametre maart
 *
-* Return: 0 on success
+* Return: 0 on ila njah
 */
 char *_concatDyl(char *tmp, char **av, char *tok)
 {
