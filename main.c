@@ -1,17 +1,17 @@
 #include "main.h"
 /**
- * _gtenvDyl - char func
- * @nmDyln: param
+ * _getenvDyl - char func
+ * @name: param
  *
  * Return: NULL
  */
-char *_gtenvDyl(const char *nmDyln)
+char *_getenvDyl(const char *name)
 {
     int i, result;
 
     for (i = 0; environ[i]; i++)
     {
-        result = _PTHstrDyl(nmDyln, environ[i]);
+        result = _PATHstrcmpDyl(name, environ[i]);
         if (result == 0)
         {
             return (environ[i]);
@@ -20,54 +20,54 @@ char *_gtenvDyl(const char *nmDyln)
     return (NULL);
 }
 /**
- * _envDyl - prints the environ
+ * _Dylenv - prints the environ
  *
  * Return: 0 on success
  */
-int _envDyl(void)
+int _Dylenv(void)
 {
     int i;
 
     for (i = 0; environ[i]; i++)
-        _ptsDyl(environ[i]);
+        _putsDyl(environ[i]);
     return (0);
 }
 /**
- * _ptsDyl - prints a string
- * @strDyln: string to print
+ * _putsDyl - prints a string
+ * @Dylnstr: string to print
  */
-void _ptsDyl(char *strDyln)
+void _putsDyl(char *Dylnstr)
 {
     int c;
 
-    for (c = 0; strDyln[c] != '\0'; c++)
-        _putchar(strDyln[c]);
-    _putchar('\n');
+    for (c = 0; Dylnstr[c] != '\0'; c++)
+        _Dylnaptch(Dylnstr[c]);
+    _Dylnaptch('\n');
 }
 /**
- * _putchar - prints a character
+ * _Dylnaptch - prints a character
  * @c: character to print
  *
  * Return: return value of write syscall
  */
-int _putchar(char c)
+int _Dylnaptch(char c)
 {
     return (write(1, &c, 1));
 }
 /**
- * _mmsetDyl - char func
- * @sDy: param
- * @bDy: param
+ * _memsetDyl - char func
+ * @s: param
+ * @b: param
  * @n: param
  * Return: array
  */
-char *_mmsetDyl(char *sDy, char bDy, unsigned int n)
+char *_memsetDyl(char *s, char b, unsigned int n)
 {
     unsigned int i;
 
     for (i = 0; i < n; i++)
     {
-        sDy[i] = bDy;
+        s[i] = b;
     }
-    return (sDy);
+    return (s);
 }

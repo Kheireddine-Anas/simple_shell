@@ -14,30 +14,28 @@
 
 extern char **environ;
 
-int prmtdyln(void);
-char *rddyln(void);
-char *_flpthbf(char **avvd, char *PTHd, char *cpydyl);
-int chkbLtin(char **avvd, char *bfrdyl, int extsts);
-int _prkprc(char **avvd, char *bfrdyl, char *flpthbff);
+int promptDyl(void);
+char *_readDyl(void);
+char *_fullpathbfDyl(char **av, char *PATH, char *copy);
+int checkbuiltinsDyl(char **av, char *buffer, int exitstatus);
+int _forkprocesDyl(char **av, char *buffer, char *flpthbfD);
 
 
-char *_strupDyl(char *strDyln);
-int _splstrD(char *strDyln);
-int _strcompD(const char *st1, const char *st2);
-char *_strctDyl(char *dstDyl, char *srcBnd);
-int _strlenDyl(char *sDy);
+char *_strdupDyl(char *Dylnstr);
+int _splitstringDyl(char *Dylnstr);
+int _strcmpDyl(const char *strD1, const char *strD2);
+char *_strcatDyl(char *dest, char *src);
+int _strlenDyl(char *s);
 
+char **tokenizeDyl(char *buffer);
+int _splitPATHdYl(char *Dylnstr);
+int _PATHstrcmpDyl(const char *strD1, const char *strD2);
+char *_concatDyl(char *tmp, char **av, char *tok);
 
-char **tknszDyl(char *bfrdyl);
-int _spltpthDyl(char *strDyln);
-int _PTHstrDyl(const char *st1, const char *st2);
-char *_cnctDyl(char *tmpDyl, char **avvd, char *tokDyl);
-
-
-char *_gtenvDyl(const char *nmDyln);
-int _envDyl(void);
-void _ptsDyl(char *strDyln);
-int _putchar(char c);
-char *_mmsetDyl(char *sDy, char bDy, unsigned int n);
+char *_getenvDyl(const char *name);
+int _Dylenv(void);
+void _putsDyl(char *Dylnstr);
+int _Dylnaptch(char c);
+char *_memsetDyl(char *s, char b, unsigned int n);
 
 #endif

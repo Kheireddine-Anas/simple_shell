@@ -1,145 +1,145 @@
 #include "main.h"
 /**
- * prmtdyln - int func
+ * promptDyl - int func
  *
  * Return: 0
  */
-int prmtdyln(void)
+int promptDyl(void)
 {
-    char *prmtdyln = "SHLL$ ";
+    char *promptDyl = "$ ";
     ssize_t writecount = 0;
 
     if (isatty(STDIN_FILENO) == 1)
     {
-        writecount = write(STDOUT_FILENO, prmtdyln, 2);
+        writecount = write(STDOUT_FILENO, promptDyl, 2);
         if (writecount == -1)
             exit(0);
     }
     return (0);
 }
 /**
- * rddyln - char func
+ * _readDyl - char func
  *
  * Return: pointer
  */
-char *rddyln(void)
+char *_readDyl(void)
 {
     ssize_t readcount = 0;
     size_t n = 0;
-    char *bfrdyl = NULL;
+    char *buffer = NULL;
     int i = 0;
 
-    readcount = getline(&bfrdyl, &n, stdin);
+    readcount = getline(&buffer, &n, stdin);
     if (readcount == -1)
     {
-        free(bfrdyl);
+        free(buffer);
         if (isatty(STDIN_FILENO) != 0)
             write(STDOUT_FILENO, "\n", 1);
         exit(0);
     }
-    if (bfrdyl[readcount - 1] == '\n' || bfrdyl[readcount - 1] == '\t')
-        bfrdyl[readcount - 1] = '\0';
-    for (i = 0; bfrdyl[i]; i++)
+    if (buffer[readcount - 1] == '\n' || buffer[readcount - 1] == '\t')
+        buffer[readcount - 1] = '\0';
+    for (i = 0; buffer[i]; i++)
     {
-        if (bfrdyl[i] == '#' && bfrdyl[i - 1] == ' ')
+        if (buffer[i] == '#' && buffer[i - 1] == ' ')
         {
-            bfrdyl[i] = '\0';
+            buffer[i] = '\0';
             break;
         }
     }
-    return (bfrdyl);
+    return (buffer);
 }
 /**
- * _flpthbf - char func
- * @avvd: param
- * @PTHd: param
- * @cpydyl: param
+ * _fullpathbfDyl - char func
+ * @av: param
+ * @PATH: param
+ * @copy: param
  *
  * Return: pointer
  */
-char *_flpthbf(char **avvd, char *PTHd, char *cpydyl)
+char *_fullpathbfDyl(char **av, char *PATH, char *copy)
 {
-    char *tokDyl, *flpthbff = NULL, *concatstr = NULL;
-    static char tmpDyl[256];
+    char *tok, *flpthbfD = NULL, *concatstr = NULL;
+    static char tmp[256];
     int PATHcount = 0, fullpathflag = 0, /*len = 0,*/ z = 0, toklen = 0;
     struct stat h;
 
-    cpydyl = NULL;
-    cpydyl = _strupDyl(PTHd);
-    PATHcount = _spltpthDyl(cpydyl);
-    tokDyl = strtok(cpydyl, ": =");
-    while (tokDyl != NULL)
+    copy = NULL;
+    copy = _strdupDyl(PATH);
+    PATHcount = _splitPATHdYl(copy);
+    tok = strtok(copy, ": =");
+    while (tok != NULL)
     {
-        concatstr = _cnctDyl(tmpDyl, avvd, tokDyl);
+        concatstr = _concatDyl(tmp, av, tok);
         if (stat(concatstr, &h) == 0)
         {
-            flpthbff = concatstr;
+            flpthbfD = concatstr;
             fullpathflag = 1;
             break;
         }
         if (z < PATHcount - 2)
         {
-            toklen = _strlenDyl(tokDyl);
-            if (tokDyl[toklen + 1] == ':')
+            toklen = _strlenDyl(tok);
+            if (tok[toklen + 1] == ':')
             {
-                if (stat(avvd[0], &h) == 0)
+                if (stat(av[0], &h) == 0)
                 {
-                    flpthbff = avvd[0];
+                    flpthbfD = av[0];
                     fullpathflag = 1;
                     break;
                 }
             }
         }
         z++;
-        tokDyl = strtok(NULL, ":");
+        tok = strtok(NULL, ":");
     }
     if (fullpathflag == 0)
-        flpthbff = avvd[0];
-    free(cpydyl);
-    return (flpthbff);
+        flpthbfD = av[0];
+    free(copy);
+    return (flpthbfD);
 }
 /**
- * chkbLtin - int func
- * @avvd: param
- * @bfrdyl: param
- * @extsts: param
+ * checkbuiltinsDyl - int func
+ * @av: param
+ * @buffer: param
+ * @exitstatus: param
  * Return: 1 or 0
  */
-int chkbLtin(char **avvd, char *bfrdyl, int extsts)
+int checkbuiltinsDyl(char **av, char *buffer, int exitstatus)
 {
     int i;
 
-    if (_strcompD(avvd[0], "env") == 0)
+    if (_strcmpDyl(av[0], "env") == 0)
     {
-        _envDyl();
-        for (i = 0; avvd[i]; i++)
-            free(avvd[i]);
-        free(avvd);
-        free(bfrdyl);
+        _Dylenv();
+        for (i = 0; av[i]; i++)
+            free(av[i]);
+        free(av);
+        free(buffer);
         return (1);
     }
-    else if (_strcompD(avvd[0], "exit") == 0)
+    else if (_strcmpDyl(av[0], "exit") == 0)
     {
-        for (i = 0; avvd[i]; i++)
-            free(avvd[i]);
-        free(avvd);
-        free(bfrdyl);
-        exit(extsts);
+        for (i = 0; av[i]; i++)
+            free(av[i]);
+        free(av);
+        free(buffer);
+        exit(exitstatus);
     }
     else
         return (0);
 }
 /**
- * _prkprc - int func
- * @avvd: param
- * @bfrdyl: param
- * @flpthbff: param
+ * _forkprocesDyl - int func
+ * @av: param
+ * @buffer: param
+ * @flpthbfD: param
  *
  * Return: 0 on success
  */
-int _prkprc(char **avvd, char *bfrdyl, char *flpthbff)
+int _forkprocesDyl(char **av, char *buffer, char *flpthbfD)
 {
-    int i, status, result, extsts = 0;
+    int i, status, result, exitstatus = 0;
     pid_t pid;
 
     pid = fork();
@@ -150,25 +150,25 @@ int _prkprc(char **avvd, char *bfrdyl, char *flpthbff)
     }
     if (pid == 0)
     {
-        result = execve(flpthbff, avvd, environ);
+        result = execve(flpthbfD, av, environ);
         if (result == -1)
         {
-            perror(avvd[0]);
-            for (i = 0; avvd[i]; i++)
-                free(avvd[i]);
-            free(avvd);
-            free(bfrdyl);
+            perror(av[0]);
+            for (i = 0; av[i]; i++)
+                free(av[i]);
+            free(av);
+            free(buffer);
             exit(127);
         }
     }
     wait(&status);
     if (WIFEXITED(status))
     {
-        extsts = WEXITSTATUS(status);
+        exitstatus = WEXITSTATUS(status);
     }
-    for (i = 0; avvd[i]; i++)
-        free(avvd[i]);
-    free(avvd);
-    free(bfrdyl);
-    return (extsts);
+    for (i = 0; av[i]; i++)
+        free(av[i]);
+    free(av);
+    free(buffer);
+    return (exitstatus);
 }
