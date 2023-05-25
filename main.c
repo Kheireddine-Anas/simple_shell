@@ -55,11 +55,11 @@ int _Dylnaptch(char c)
 	return (write(1, &c, 1));
 }
 /**
-* _memsetDyl - char func
-* @s: param
-* @b: param
-* @n: param
-* Return: array
+* _memsetDyl - char functin the pro.
+* @s: paramitre teh pro.
+* @b: paramitre the pro.
+* @n: paramitre the pro.
+* Return: arrayy.
 */
 char *_memsetDyl(char *s, char b, unsigned int n)
 {
