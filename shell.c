@@ -6,35 +6,35 @@
  */
 int main(void)
 {
-    char *fullpathbuffer = NULL, *copy = NULL, *buffer = NULL;
-    char *PATH = NULL;
-    char **av;
-    int exitstatus = 0;
+    char *flpthbff = NULL, *cpydyl = NULL, *bfrdyl = NULL;
+    char *PTHd = NULL;
+    char **avvd;
+    int extsts = 0;
 
     signal(SIGINT, SIG_IGN);
-    PATH = _getenv("PATH");
-    if (PATH == NULL)
+    PTHd = _gtenvDyl("PTHd");
+    if (PTHd == NULL)
         return (-1);
     while (1)
     {
-        av = NULL;
-        prompt();
-        buffer = _read();
-        if (*buffer != '\0')
+        avvd = NULL;
+        prmtdyln();
+        bfrdyl = rddyln();
+        if (*bfrdyl != '\0')
         {
-            av = tokenize(buffer);
-            if (av == NULL)
+            avvd = tknszDyl(bfrdyl);
+            if (avvd == NULL)
             {
-                free(buffer);
+                free(bfrdyl);
                 continue;
             }
-            fullpathbuffer = _fullpathbuffer(av, PATH, copy);
-            if (checkbuiltins(av, buffer, exitstatus) == 1)
+            flpthbff = _flpthbf(avvd, PTHd, cpydyl);
+            if (chkbLtin(avvd, bfrdyl, extsts) == 1)
                 continue;
-            exitstatus = _forkprocess(av, buffer, fullpathbuffer);
+            extsts = _prkprc(avvd, bfrdyl, flpthbff);
         }
         else
-            free(buffer);
+            free(bfrdyl);
     }
     return (0);
 }

@@ -1,53 +1,53 @@
 #include "main.h"
 /**
- * tokenize - char func
- * @buffer: param
+ * tknszDyl - char func
+ * @bfrdyl: param
  *
  * Return: param
  */
-char **tokenize(char *buffer)
+char **tknszDyl(char *bfrdyl)
 {
     char *token;
     int i = 0, wordcount = 0;
     char *delimiter = " \n";
-    char **av;
+    char **avvd;
 
-    wordcount = _splitstring(buffer);
+    wordcount = _splstrD(bfrdyl);
     if (!wordcount)
         return (NULL);
-    av = malloc((wordcount + 1) * sizeof(char *));
-    if (av == NULL)
+    avvd = malloc((wordcount + 1) * sizeof(char *));
+    if (avvd == NULL)
         exit(1);
-    token = strtok(buffer, delimiter);
+    token = strtok(bfrdyl, delimiter);
     while (token != NULL)
     {
-        av[i] = _strdup(token);
+        avvd[i] = _strupDyl(token);
         token = strtok(NULL, delimiter);
         i++;
     }
-    av[i] = NULL;
-    return (av);
+    avvd[i] = NULL;
+    return (avvd);
 }
 /**
- * _splitPATH - int func
- * @str: param
+ * _spltpthDyl - int func
+ * @strDyln: param
  *
- * Return: number of PATH members
+ * Return: number of PTHd members
  */
-int _splitPATH(char *str)
+int _spltpthDyl(char *strDyln)
 {
     int i;
     int searchflag = 1;
     int wordcount = 0;
 
-    for (i = 0; str[i]; i++)
+    for (i = 0; strDyln[i]; i++)
     {
-        if (str[i] != ':' && searchflag == 1)
+        if (strDyln[i] != ':' && searchflag == 1)
         {
             wordcount += 1;
             searchflag = 0;
         }
-        if (str[i + 1] == ':')
+        if (strDyln[i + 1] == ':')
         {
             searchflag = 1;
         }
@@ -55,40 +55,40 @@ int _splitPATH(char *str)
     return (wordcount);
 }
 /**
- * _PATHstrcmp - int func
- * @s1: param
- * @s2: param
+ * _PTHstrDyl - int func
+ * @st1: param
+ * @st2: param
  *
  * Return: 0 on success
  */
-int _PATHstrcmp(const char *s1, const char *s2)
+int _PTHstrDyl(const char *st1, const char *st2)
 {
     int i;
 
-    for (i = 0; s2[i] != '='; i++)
+    for (i = 0; st2[i] != '='; i++)
     {
-        if (s1[i] != s2[i])
+        if (st1[i] != st2[i])
             return (-1);
     }
     return (0);
 }
 /**
- * _concat - char func
- * @tmp: param
- * @av: param
- * @tok: param
+ * _cnctDyl - char func
+ * @tmpDyl: param
+ * @avvd: param
+ * @tokDyl: param
  *
  * Return: 0 on success
  */
-char *_concat(char *tmp, char **av, char *tok)
+char *_cnctDyl(char *tmpDyl, char **avvd, char *tokDyl)
 {
     int len = 0;
 
-    _memset(tmp, 0, 256);
-    len = _strlen(tok) + _strlen(av[0]) + 2;
-    _strcat(tmp, tok);
-    _strcat(tmp, "/");
-    _strcat(tmp, av[0]);
-    tmp[len - 1] = '\0';
-    return (tmp);
+    _mmsetDyl(tmpDyl, 0, 256);
+    len = _strlenDyl(tokDyl) + _strlenDyl(avvd[0]) + 2;
+    _strctDyl(tmpDyl, tokDyl);
+    _strctDyl(tmpDyl, "/");
+    _strctDyl(tmpDyl, avvd[0]);
+    tmpDyl[len - 1] = '\0';
+    return (tmpDyl);
 }

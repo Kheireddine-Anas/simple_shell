@@ -1,102 +1,102 @@
 #include "main.h"
 /**
- * _strdup - char func
- * @str: param
+ * _strupDyl - char func
+ * @strDyln: param
  *
  * Return: pointer
  */
-char *_strdup(char *str)
+char *_strupDyl(char *strDyln)
 {
     int i;
     char *dest_str;
 
-    if (str == NULL)
+    if (strDyln == NULL)
         return (NULL);
-    for (i = 0; str[i] != '\0'; i++)
+    for (i = 0; strDyln[i] != '\0'; i++)
         ;
     dest_str = malloc(sizeof(char) * (i + 1));
     if (dest_str == NULL)
         return (NULL);
-    for (i = 0; str[i] != '\0'; i++)
+    for (i = 0; strDyln[i] != '\0'; i++)
     {
-        dest_str[i] = str[i];
+        dest_str[i] = strDyln[i];
     }
     dest_str[i] = '\0';
     return (dest_str);
 }
 /**
- * _splitstring - int func
- * @str: param
+ * _splstrD - int func
+ * @strDyln: param
  *
  * Return: param
  */
-int _splitstring(char *str)
+int _splstrD(char *strDyln)
 {
     int i;
     int searchflag = 1;
     int wordcount = 0;
 
-    for (i = 0; str[i]; i++)
+    for (i = 0; strDyln[i]; i++)
     {
-        if (str[i] != ' ' && searchflag == 1)
+        if (strDyln[i] != ' ' && searchflag == 1)
         {
             wordcount += 1;
             searchflag = 0;
         }
-        if (str[i + 1] == ' ')
+        if (strDyln[i + 1] == ' ')
             searchflag = 1;
     }
     return (wordcount);
 }
 /**
- * _strcmp - int func
- * @s1: param
- * @s2: param
+ * _strcompD - int func
+ * @st1: param
+ * @st2: param
  * Return: int
  */
-int _strcmp(const char *s1, const char *s2)
+int _strcompD(const char *st1, const char *st2)
 {
-    while ((*s1 != '\0' && *s2 != '\0') && *s1 == *s2)
+    while ((*st1 != '\0' && *st2 != '\0') && *st1 == *st2)
     {
-        s1++;
-        s2++;
+        st1++;
+        st2++;
     }
-    if (*s1 == *s2)
+    if (*st1 == *st2)
         return (0);
     else
-        return (*s1 - *s2);
+        return (*st1 - *st2);
 }
 /**
- * _strcat - char func
- * @dest: param
- * @src: param
+ * _strctDyl - char func
+ * @dstDyl: param
+ * @srcBnd: param
  * i - param
  * j - param
  * Return: char
  */
-char *_strcat(char *dest, char *src)
+char *_strctDyl(char *dstDyl, char *srcBnd)
 {
     int i;
     int j;
 
-    for (i = 0; dest[i] != '\0'; i++)
+    for (i = 0; dstDyl[i] != '\0'; i++)
         ;
-    for (j = 0; src[j] != '\0'; j++, i++)
-        dest[i] = src[j];
-    dest[i] = '\0';
-    return (dest);
+    for (j = 0; srcBnd[j] != '\0'; j++, i++)
+        dstDyl[i] = srcBnd[j];
+    dstDyl[i] = '\0';
+    return (dstDyl);
 }
 /**
- * _strlen - int func
- * @s: param
+ * _strlenDyl - int func
+ * @sDy: param
  * i - param
  * Return: int
  */
-int _strlen(char *s)
+int _strlenDyl(char *sDy)
 {
     int i;
 
-    for (i = 0; s[i]; i++)
+    for (i = 0; sDy[i]; i++)
         ;
     return (i);
 }

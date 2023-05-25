@@ -1,17 +1,17 @@
 #include "main.h"
 /**
- * _getenv - char func
- * @name: param
+ * _gtenvDyl - char func
+ * @nmDyln: param
  *
  * Return: NULL
  */
-char *_getenv(const char *name)
+char *_gtenvDyl(const char *nmDyln)
 {
     int i, result;
 
     for (i = 0; environ[i]; i++)
     {
-        result = _PATHstrcmp(name, environ[i]);
+        result = _PTHstrDyl(nmDyln, environ[i]);
         if (result == 0)
         {
             return (environ[i]);
@@ -20,28 +20,28 @@ char *_getenv(const char *name)
     return (NULL);
 }
 /**
- * _env - prints the environ
+ * _envDyl - prints the environ
  *
  * Return: 0 on success
  */
-int _env(void)
+int _envDyl(void)
 {
     int i;
 
     for (i = 0; environ[i]; i++)
-        _puts(environ[i]);
+        _ptsDyl(environ[i]);
     return (0);
 }
 /**
- * _puts - prints a string
- * @str: string to print
+ * _ptsDyl - prints a string
+ * @strDyln: string to print
  */
-void _puts(char *str)
+void _ptsDyl(char *strDyln)
 {
     int c;
 
-    for (c = 0; str[c] != '\0'; c++)
-        _putchar(str[c]);
+    for (c = 0; strDyln[c] != '\0'; c++)
+        _putchar(strDyln[c]);
     _putchar('\n');
 }
 /**
@@ -55,19 +55,19 @@ int _putchar(char c)
     return (write(1, &c, 1));
 }
 /**
- * _memset - char func
- * @s: param
- * @b: param
+ * _mmsetDyl - char func
+ * @sDy: param
+ * @bDy: param
  * @n: param
  * Return: array
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_mmsetDyl(char *sDy, char bDy, unsigned int n)
 {
     unsigned int i;
 
     for (i = 0; i < n; i++)
     {
-        s[i] = b;
+        sDy[i] = bDy;
     }
-    return (s);
+    return (sDy);
 }

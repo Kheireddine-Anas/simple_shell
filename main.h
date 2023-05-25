@@ -14,37 +14,30 @@
 
 extern char **environ;
 
-/* PATH Shell Functions */
+int prmtdyln(void);
+char *rddyln(void);
+char *_flpthbf(char **avvd, char *PTHd, char *cpydyl);
+int chkbLtin(char **avvd, char *bfrdyl, int extsts);
+int _prkprc(char **avvd, char *bfrdyl, char *flpthbff);
 
-/* Program Flow */
 
-int prompt(void);
-char *_read(void);
-char *_fullpathbuffer(char **av, char *PATH, char *copy);
-int checkbuiltins(char **av, char *buffer, int exitstatus);
-int _forkprocess(char **av, char *buffer, char *fullpathbuffer);
+char *_strupDyl(char *strDyln);
+int _splstrD(char *strDyln);
+int _strcompD(const char *st1, const char *st2);
+char *_strctDyl(char *dstDyl, char *srcBnd);
+int _strlenDyl(char *sDy);
 
-/* String Helper Functions */
 
-char *_strdup(char *str);
-int _splitstring(char *str);
-int _strcmp(const char *s1, const char *s2);
-char *_strcat(char *dest, char *src);
-int _strlen(char *s);
+char **tknszDyl(char *bfrdyl);
+int _spltpthDyl(char *strDyln);
+int _PTHstrDyl(const char *st1, const char *st2);
+char *_cnctDyl(char *tmpDyl, char **avvd, char *tokDyl);
 
-/*Tokenize & PATH Helper Functions*/
 
-char **tokenize(char *buffer);
-int _splitPATH(char *str);
-int _PATHstrcmp(const char *s1, const char *s2);
-char *_concat(char *tmp, char **av, char *tok);
-
-/*Other Helper Funcs*/
-
-char *_getenv(const char *name);
-int _env(void);
-void _puts(char *str);
+char *_gtenvDyl(const char *nmDyln);
+int _envDyl(void);
+void _ptsDyl(char *strDyln);
 int _putchar(char c);
-char *_memset(char *s, char b, unsigned int n);
+char *_mmsetDyl(char *sDy, char bDy, unsigned int n);
 
 #endif
