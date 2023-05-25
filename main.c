@@ -1,7 +1,7 @@
-#include "main.h"
+#include "maindl.h"
 /**
-* _getenvDyl - char func
-* @name: param
+* _getenvDyl - char the function the slution pro.
+* @name: parammtre the pro.
 *
 * Return: NULL
 */
@@ -20,9 +20,9 @@ for (i = 0; environ[i]; i++)
 return (NULL);
 }
 /**
-* _Dylenv - prints the environ
+* _Dylenv - prints thee environment.
 *
-* Return: 0 on success
+* Return: 0 on success.
 */
 int _Dylenv(void)
 {
@@ -33,8 +33,8 @@ int _Dylenv(void)
 	return (0);
 }
 /**
-* _putsDyl - prints a string
-* @Dylnstr: string to print
+* _putsDyl - prints string go pro.
+* @Dylnstr: string in the printing.
 */
 void _putsDyl(char *Dylnstr)
 {
@@ -45,10 +45,10 @@ void _putsDyl(char *Dylnstr)
 	_Dylnaptch('\n');
 }
 /**
-* _Dylnaptch - prints a character
-* @c: character to print
+* _Dylnaptch - prints in characterst the pro.
+* @c: character the printing are pro.
 *
-* Return: return value of write syscall
+* Return: return the value of write syscall pro.
 */
 int _Dylnaptch(char c)
 {
