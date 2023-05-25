@@ -1,8 +1,8 @@
-#include "main.h"
+#include "maindl.h"
 /**
-* promptDyl - int func
+* promptDyl - int func dyalna hadi
 *
-* Return: 0
+* Return: 0 fi had hala
 */
 int promptDyl(void)
 {
@@ -18,9 +18,9 @@ int promptDyl(void)
 	return (0);
 }
 /**
-* _readDyl - char func
+* _readDyl - char func dyalna 3awtni
 *
-* Return: pointer
+* Return: pointer fi aya hala
 */
 char *_readDyl(void)
 {
@@ -50,12 +50,12 @@ char *_readDyl(void)
 	return (buffer);
 }
 /**
-* _fullpathbfDyl - char func
-* @av: param
-* @PATH: param
-* @copy: param
+* _fullpathbfDyl - char func maart liha waqila
+* @av: parametre dyalhom
+* @PATH: param parametre dyalhom
+* @copy: param parametre dyalhom
 *
-* Return: pointer
+* Return: pointer waqila
 */
 char *_fullpathbfDyl(char **av, char *PATH, char *copy)
 {
@@ -99,11 +99,11 @@ char *_fullpathbfDyl(char **av, char *PATH, char *copy)
 	return (flpthbfD);
 }
 /**
-* checkbuiltinsDyl - int func
-* @av: param
-* @buffer: param
-* @exitstatus: param
-* Return: 1 or 0
+* checkbuiltinsDyl - int func bazaf hadchi
+* @av: param parametre dyalhom
+* @buffer: param parametre dyalhom
+* @exitstatus: param parametre dyalhom
+* Return: 1 or 0 ila bghat
 */
 int checkbuiltinsDyl(char **av, char *buffer, int exitstatus)
 {
@@ -130,12 +130,12 @@ int checkbuiltinsDyl(char **av, char *buffer, int exitstatus)
 		return (0);
 }
 /**
-* _forkprocesDyl - int func
-* @av: param
-* @buffer: param
-* @flpthbfD: param
+* _forkprocesDyl - int func fi dakchi kamal
+* @av: param parametre dyalhom
+* @buffer: param parametre dyalhom
+* @flpthbfD: param parametre dyalhom
 *
-* Return: 0 on success
+* Return: 0 on success za3ma hiya
 */
 int _forkprocesDyl(char **av, char *buffer, char *flpthbfD)
 {
