@@ -1,4 +1,4 @@
-#include "main.h"
+#include "maindl.h"
 /**
 * main - int func kamlin hado waqila
 *
